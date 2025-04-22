@@ -1,0 +1,58 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: black;
+  color: white;
+  overflow: hidden;
+}
+
+.intro {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: black;
+  animation: fadeOut 2s ease 4s forwards;
+}
+
+#logo-text {
+  font-size: 4rem;
+  opacity: 0;
+  transform: scale(0.8);
+  animation: fadeInScale 3s ease forwards;
+}
+
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.main-content {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1.5s ease, transform 1.5s ease;
+  padding: 40px;
+}
+
+.main-content.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+section {
+  margin-bottom: 60px;
+}
