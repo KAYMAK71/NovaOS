@@ -1,5 +1,7 @@
-window.addEventListener("load", () => {
-  setTimeout(() => {
-    document.getElementById("main").classList.add("show");
-  }, 5000); // Intro biter bitmez içerik göster
-});
+const introVideo = document.getElementById("introVideo");
+const mainContent = document.getElementById("main");
+
+introVideo.onended = () => {
+  mainContent.classList.add("show");
+  window.scrollTo({ top: window.innerHeight, behavior: "smooth" });
+};
